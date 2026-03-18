@@ -1,0 +1,663 @@
+/* ========== Global & layout ========== */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  width: 100%;
+}
+
+.loading-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: #666;
+}
+
+/* ========== Navbar ========== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  background: #1a1a2e;
+  color: #eee;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #eee;
+  text-decoration: none;
+}
+
+.navbar-brand:hover {
+  color: #c9b3ff;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.navbar-name {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.badge-prospective {
+  background: #3d5a80;
+  color: #fff;
+}
+
+.badge-inducted {
+  background: #2d6a4f;
+  color: #fff;
+}
+
+.badge-officer {
+  background: #7b2cbf;
+  color: #fff;
+}
+
+.badge.large {
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem;
+}
+
+.btn-logout {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+/* ========== Buttons ========== */
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #5c4d7a;
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #7b2cbf;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #eee;
+  border: 1px solid #666;
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: #333;
+  border-color: #888;
+}
+
+.btn-success {
+  background: #2d6a4f;
+  color: #fff;
+}
+
+.btn-success:hover:not(:disabled) {
+  background: #40916c;
+}
+
+.btn-danger {
+  background: #9d0208;
+  color: #fff;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: #c1121f;
+}
+
+.btn-block {
+  width: 100%;
+  display: block;
+}
+
+.btn-sm {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.85rem;
+}
+
+/* ========== Cards ========== */
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== Forms ========== */
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #7b2cbf;
+  box-shadow: 0 0 0 2px rgba(123, 44, 191, 0.2);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.error-message {
+  color: #9d0208;
+  background: #ffe5e5;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.success-message {
+  color: #2d6a4f;
+  background: #d8f3dc;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ========== Login page ========== */
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 60px);
+  padding: 2rem 1rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.login-card h1 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.5rem;
+  color: #1a1a2e;
+}
+
+.login-card .subtitle {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.login-form {
+  margin-bottom: 1rem;
+}
+
+.toggle-mode {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #7b2cbf;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  font-size: inherit;
+}
+
+.link-button:hover {
+  color: #5c4d7a;
+}
+
+/* ========== Dashboard & pages ========== */
+.page h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  color: #1a1a2e;
+}
+
+.page .subtitle {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.welcome {
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.points-total {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #7b2cbf;
+  margin: 0.5rem 0;
+}
+
+.induction-progress {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.25rem 0;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0.75rem 0 1rem 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #7b2cbf;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.inducted-badge-card .badge-inducted {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.officer-card p,
+.inducted-badge-card p {
+  margin: 0.5rem 0;
+  color: #444;
+}
+
+/* ========== Point history list ========== */
+.claims-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.claim-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+}
+
+.claim-item:last-child {
+  border-bottom: none;
+}
+
+.claim-points {
+  font-weight: 600;
+  color: #7b2cbf;
+  min-width: 4rem;
+}
+
+.claim-desc {
+  flex: 1;
+  color: #333;
+}
+
+.claim-status {
+  font-size: 0.8rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  text-transform: capitalize;
+}
+
+.claim-pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.claim-approved {
+  background: #d8f3dc;
+  color: #2d6a4f;
+}
+
+.claim-rejected {
+  background: #ffe5e5;
+  color: #9d0208;
+}
+
+/* ========== Submit page ========== */
+.submit-card {
+  margin-bottom: 1rem;
+}
+
+.submit-form .btn-block {
+  margin-top: 0.5rem;
+}
+
+.muted {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* ========== Officer page ========== */
+.pending-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pending-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+}
+
+.pending-item:last-child {
+  border-bottom: none;
+}
+
+.pending-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.pending-points {
+  font-weight: 700;
+  color: #7b2cbf;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.pending-desc {
+  color: #333;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.pending-user {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.pending-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* ========== Officer Kanban board ========== */
+.kanban-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.kanban-column {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.kanban-column-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.kanban-card {
+  background: #fff;
+  border-radius: 6px;
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.kanban-card-main {
+  margin-bottom: 0.4rem;
+}
+
+.kanban-card-points {
+  font-weight: 700;
+  color: #7b2cbf;
+  margin-bottom: 0.2rem;
+}
+
+.kanban-card-desc {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+.kanban-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.kanban-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.kanban-status-badge {
+  display: inline-block;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  background: #fff3cd;
+  color: #856404;
+  font-size: 0.75rem;
+  width: fit-content;
+}
+
+.kanban-status-approved {
+  background: #d8f3dc;
+  color: #2d6a4f;
+}
+
+/* ========== Notifications page ========== */
+.page-header-with-notifications {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.page-header-with-notifications h1 {
+  margin: 0;
+}
+
+.back-to-dashboard {
+  font-size: 0.9rem;
+}
+
+.notifications-card {
+  margin-bottom: 1rem;
+}
+
+.notifications-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notification-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.notification-points {
+  font-weight: 700;
+  color: #7b2cbf;
+  font-size: 1rem;
+}
+
+.notification-title {
+  font-weight: 500;
+  color: #1a1a2e;
+}
+
+.notification-detail {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.notification-date {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.notification-status {
+  margin-top: 0.25rem;
+}
+
+.notification-status-badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.notification-status-badge.status-pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.notification-status-badge.status-in_review {
+  background: #cce5ff;
+  color: #004085;
+}
+
+.notification-status-badge.status-approved {
+  background: #d8f3dc;
+  color: #2d6a4f;
+}
+
+.notification-status-badge.status-rejected {
+  background: #ffe5e5;
+  color: #9d0208;
+}
+
+.notification-summary {
+  margin: 0.35rem 0 0 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.dashboard-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.dashboard-heading-row h1 {
+  margin: 0;
+}
+
+.notification-link-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  background: #f0e6ff;
+  color: #5c4d7a;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.notification-link-wrap:hover {
+  background: #e0d0ff;
+  color: #3d2e5a;
+}
+
+.notification-badge {
+  background: #7b2cbf;
+  color: #fff;
+  font-size: 0.75rem;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.35rem;
+}
