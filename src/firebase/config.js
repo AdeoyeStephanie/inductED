@@ -1,22 +1,21 @@
 /**
  * Firebase configuration for WICS Point Tracker.
- * Replace the placeholder values below with your actual Firebase project credentials.
- * Get these from: Firebase Console → Project Settings → Your apps → Add app (Web).
+ * Credentials are loaded from environment variables (.env file)
+ * so they are never hardcoded or exposed on GitHub.
  */
-
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
-// Firebase configuration object (from Firebase Console)
+// Firebase configuration reads from .env file
 const firebaseConfig = {
-  apiKey: "AIzaSyBTtC9I6GvAE5OScmyEQhLzXl4Xu7PaoJ0",
-  authDomain: "wics-points-tracker.firebaseapp.com",
-  projectId: "wics-points-tracker",
-  storageBucket: "wics-points-tracker.firebasestorage.app",
-  messagingSenderId: "809830558496",
-  appId: "1:809830558496:web:7615c256d56c7d002a4545"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 // Initialize Firebase (only once for the whole app)
